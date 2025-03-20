@@ -1,11 +1,6 @@
 def get_num_words(text):
-    text_list = text.split()
-    num_words = 0
-
-    for word in text_list:
-        num_words += 1
-
-    print(f"{num_words} words found in the document")
+    num_words = len(text.split())
+    return num_words
 
 def get_num_letters(text):
     text_list = text.lower().split()
@@ -18,7 +13,19 @@ def get_num_letters(text):
             else:
                 letter_stats[letter] = 1
 
-    sort_stats(letter_stats)
+    return letter_stats
 
-def sort_stats(dict):
-    return dict.sort(reverse=True, key=dict[""])
+def sort_list(dict):
+    sorted_list = []
+
+    for character in dict:
+        if character.isalpha() == True:
+            count = dict[character]
+            sorted_list.append({"character": character, "count": count})
+
+    sorted_list.sort(reverse=True, key=sort_method)
+    
+    return sorted_list
+
+def sort_method(dict):
+    return dict["count"]
