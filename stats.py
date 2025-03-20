@@ -1,8 +1,10 @@
 def get_num_words(text):
+
     num_words = len(text.split())
     return num_words
 
 def get_num_letters(text):
+
     text_list = text.lower().split()
     letter_stats = {}
 
@@ -16,6 +18,7 @@ def get_num_letters(text):
     return letter_stats
 
 def sort_list(dict):
+
     sorted_list = []
 
     for character in dict:
@@ -28,4 +31,5 @@ def sort_list(dict):
     return sorted_list
 
 def sort_method(dict):
+    
     return dict["count"]
